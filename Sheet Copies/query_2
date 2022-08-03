@@ -1,0 +1,64 @@
+/* Find and check duplicate VIN # */
+SELECT VIN, Count(*)
+FROM car_raw_july_29
+GROUP BY VIN
+HAVING COUNT(*) > 1;
+
+/* Delete Duplicate VIN # */
+WITH CTE AS (
+	SELECT *,
+	ROW_NUMBER() OVER (
+			PARTITION BY
+				VIN
+			ORDER BY
+				VIN
+		) AS RN
+	FROM car_raw_july_22
+)
+DELETE FROM car_raw_july_22
+WHERE VIN in (SELECT VIN FROM cte WHERE RN > 1);
+
+
+
+/* Price differences btween july 22 and 29 */
+
+SELECT car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_july_29.price as price_July_29, (car_raw_july_29.price-car_raw_july_22.price) AS Difference
+FROM car_raw_july_22
+INNER JOIN car_raw_july_29
+ON car_raw_july_22.vin = car_raw_july_29.vin;
+
+
+/* Find and check duplicate VIN # (aug 2)*/
+SELECT VIN, Count(*)
+FROM car_raw_aug_2
+GROUP BY VIN
+HAVING COUNT(*) > 1;
+
+/* Price differences btween july 22 and aug 2 */
+
+SELECT car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_2.price as price_aug_2, (car_raw_aug_2.price-car_raw_july_22.price) AS Difference
+FROM car_raw_july_22
+LEFT JOIN car_raw_aug_2
+ON car_raw_july_22.vin = car_raw_aug_2.vin
+ORDER BY difference;
+
+/* Biggest price differences between 20000 and 30000 priced cars */
+
+SELECT car_raw_july_22.model, car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_2.price as price_aug_2, (car_raw_aug_2.price-car_raw_july_22.price) AS Difference
+FROM car_raw_july_22
+LEFT JOIN car_raw_aug_2
+ON car_raw_july_22.vin = car_raw_aug_2.vin
+WHERE car_raw_july_22.price BETWEEN 20000 AND 30000
+ORDER BY difference;
+
+
+
+
+
+
+
+
+
+
+
+
