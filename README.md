@@ -8,3 +8,6 @@ I created a scraping script in Python Pandas using the BeautifulSoup package. Th
 
 ## SQL Query
 The images below represent the query I ran to extract price differences. 
+
+
+After converting the data into a CSV file, I imported the data into a PostgreSQL database. The VIN number was used to uniquely identify vehicles with future listings. 
