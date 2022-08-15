@@ -14,7 +14,7 @@ After converting the data into a CSV file, I imported the data into a PostgreSQL
 
 I applied the following query to check for duplicate VIN numbers and delete repeated ones:
 
-/* Find and check duplicate VIN # */
+**/* Find and check duplicate VIN # */
 SELECT VIN, Count(*)
 FROM car_raw_aug_11
 GROUP BY VIN
@@ -32,7 +32,7 @@ WITH CTE AS (
 	FROM car_raw_july_22
 )
 DELETE FROM car_raw_july_22
-WHERE VIN in (SELECT VIN FROM cte WHERE RN > 1);
+WHERE VIN in (SELECT VIN FROM cte WHERE RN > 1);**
 
 Then I created a query to look at the price difference and price difference by percentage between said dates:
 
