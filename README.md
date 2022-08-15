@@ -14,11 +14,11 @@ After converting the data into a CSV file, I imported the data into a PostgreSQL
 
 I applied the following query to check for duplicate VIN numbers and delete repeated ones:
 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![image 1](https://github.com/umarovj/Car-Search-Project/blob/main/Query%20Results/SQL%20duplicate%20check.png)
 
 Then I created a query to look at the price difference and price difference by percentage between said dates:
 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![image 2](https://github.com/umarovj/Car-Search-Project/blob/main/Query%20Results/SQL%20price%20diff%20as%20percentage.png)
 
 
 
