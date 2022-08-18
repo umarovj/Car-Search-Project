@@ -9,7 +9,7 @@ I created a scraping script in Python Pandas using the BeautifulSoup package. Th
 
 I used the auto listings website Cars.com as the source for my data. In order to scrape the data from this website I used the BeautifulSoup package. While on the site, I set my search filters local to my zip code within 100 mile radius then copied the URL for BeautifulSoup. 
 
-I set up my Columns and scraped these parameters of over five thousand Cars.com listings:
+I set up my Variables and scraped over five thousand Cars.com listings:
 
 - 'Year'
 - 'Make'
@@ -38,11 +38,29 @@ I set up my Columns and scraped these parameters of over five thousand Cars.com 
 - 'MinMPG'
 - 'MaxMPG'
 - 'FuelType'
+- 'Transmission'
+- 'Engine'
+- 'VIN'
+- 'Stock'
+- 'Mileage' 
 
-           'Transmission','Engine','VIN','Stock','Mileage'] 
+The raw values provided in the website would not apply when importing into PostgreSQL. I needed to clean my data. 
 
+Firstly I delete two columns, 'interiorcolor' and 'exteriorcolor', because they contained special characters that made it harder for PostgreSQL to read. In addition, these values did not bring any use for my project.
 
+IMAGE
 
+I noticed that I had 'Not Priced' values under my 'Price' column which should all be integers. This will cause importing error in PostgreSQL, therefore I replaced all of these values to NaN with this code:
+
+IMAGE
+
+I was not done fixing this column. The prices still showed '$' and ',' characters which would still cause an importing error. This code cleans will eliminate those characters:
+
+IMAGE
+
+Now I am ready to export the data into a csv file using this code: 
+
+IMAGE
 
 
 ## SQL Query
