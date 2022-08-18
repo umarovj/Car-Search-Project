@@ -1,12 +1,12 @@
 /* Create a table */
 
-CREATE TABLE car_raw_aug_11
+CREATE TABLE car_raw_july_29
 (
 	Year	int,
 	Make	varchar(255),
 	Model	varchar(255),
 	used_or_new	varchar(255),
-	Price	numeric NULL,
+	Price	NUMERIC,
 	ConsumerRating	float,
 	ConsumerReviews	int,
 	SellerType	varchar(255),
@@ -37,7 +37,7 @@ CREATE TABLE car_raw_aug_11
 
 /* Find and check duplicate VIN # */
 SELECT VIN, Count(*)
-FROM car_raw_aug_11
+FROM car_raw_aug_15
 GROUP BY VIN
 HAVING COUNT(*) > 1;
 
@@ -94,26 +94,29 @@ LEFT JOIN car_raw_aug_8
 ON car_raw_july_22.vin = car_raw_aug_8.vin
 ORDER BY difference;
 
-/* Price differences btween july 22 and aug 11 */
+/* Price differences btween july 22 and aug 15 */
 
-SELECT car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_11.price as price_aug_11, (car_raw_aug_11.price - car_raw_july_22.price) AS Difference
+SELECT car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_15.price as price_aug_15, 
+(car_raw_aug_15.price - car_raw_july_22.price) AS Difference
 FROM car_raw_july_22
-LEFT JOIN car_raw_aug_11
-ON car_raw_july_22.vin = car_raw_aug_11.vin
+LEFT JOIN car_raw_aug_15
+ON car_raw_july_22.vin = car_raw_aug_15.vin
 ORDER BY difference;
 
 /* Price differences in pecentage value */
 
-SELECT car_raw_july_22.make, car_raw_july_22.mileage, car_raw_july_22.model, car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_11.price as price_aug_11, ROUND(((car_raw_aug_11.price-car_raw_july_22.price) * 100/ car_raw_july_22.price), 1) AS Percentage_of_difference
+SELECT car_raw_july_22.make, car_raw_july_22.mileage, car_raw_july_22.model, car_raw_july_22.vin, car_raw_july_22.price as price_July_22, 
+car_raw_aug_15.price as price_aug_15, 
+ROUND(((car_raw_aug_15.price-car_raw_july_22.price) * 100/ car_raw_july_22.price), 1) AS Percentage_of_difference
 FROM car_raw_july_22
-LEFT JOIN car_raw_aug_11
-ON car_raw_july_22.vin = car_raw_aug_11.vin
+LEFT JOIN car_raw_aug_15
+ON car_raw_july_22.vin = car_raw_aug_15.vin
 ORDER BY Percentage_of_difference;
 
 
 /* Biggest price differences between 20000 and 30000 priced cars */
 
-SELECT car_raw_july_22.model, car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_8.price as price_aug_8, (car_raw_aug_8.price-car_raw_july_22.price) AS Difference
+SELECT car_raw_july_22.year, car_raw_july_22.make, car_raw_july_22.model, car_raw_july_22.vin, car_raw_july_22.price as price_July_22, car_raw_aug_8.price as price_aug_8, (car_raw_aug_15.price - car_raw_july_22.price) AS Difference, (car_raw_aug_8.price-car_raw_july_22.price) AS Difference
 FROM car_raw_july_22
 LEFT JOIN car_raw_aug_8
 ON car_raw_july_22.vin = car_raw_aug_8.vin
@@ -128,6 +131,29 @@ LEFT JOIN car_raw_aug_8
 ON car_raw_july_22.vin = car_raw_aug_8.vin
 WHERE car_raw_july_22.price BETWEEN 20000 AND 30000
 ORDER BY difference;
+
+/* ALL DATA WITH differences */
+
+SELECT car_raw_july_22.VIN,
+       car_raw_july_22.year, 
+	   car_raw_july_22.make,
+	   car_raw_july_22.model, 
+	   car_raw_july_22.used_or_new, 
+	   car_raw_july_22.price, 
+	   car_raw_july_22.sellertype, 
+	   car_raw_july_22.sellername, 
+	   car_raw_july_22.zipcode, 
+	   car_raw_july_22.dealtype, 
+	   car_raw_july_22.drivetrain, 
+	   car_raw_july_22.transmission, 
+	   car_raw_july_22.engine, 
+	   car_raw_july_22.mileage,
+	   (car_raw_july_29.price-car_raw_july_22.price) AS Difference,
+	   ROUND(((car_raw_july_29.price-car_raw_july_22.price) * 100/ car_raw_july_22.price), 1) AS Percentage_of_difference
+FROM car_raw_july_22
+LEFT JOIN car_raw_july_29
+ON car_raw_july_22.vin = car_raw_july_29.vin
+ORDER BY Percentage_of_difference;
 
 
 
