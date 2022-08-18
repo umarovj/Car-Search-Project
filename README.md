@@ -48,19 +48,19 @@ The raw values provided in the website would not apply when importing into Postg
 
 Firstly I delete two columns, 'interiorcolor' and 'exteriorcolor', because they contained special characters that made it harder for PostgreSQL to read. In addition, these values did not bring any use for my project.
 
-IMAGE
+![image P1](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Drop%20columns.png)
 
 I noticed that I had 'Not Priced' values under my 'Price' column which should all be integers. This will cause importing error in PostgreSQL, therefore I replaced all of these values to NaN with this code:
 
-IMAGE
+![image P2](https://github.com/umarovj/Car-Search-Project/blob/main/Images/replace%20not%20priced.png)
 
 I was not done fixing this column. The prices still showed '$' and ',' characters which would still cause an importing error. This code cleans will eliminate those characters:
 
-IMAGE
+![image P3](https://github.com/umarovj/Car-Search-Project/blob/main/Images/remove%20signs%20from%20price.png)
 
 Now I am ready to export the data into a csv file using this code: 
 
-IMAGE
+![image P4](https://github.com/umarovj/Car-Search-Project/blob/main/Images/export%20to%20csv.png)
 
 
 ## SQL Query
@@ -71,11 +71,11 @@ After converting the data into a CSV file, I imported the data into a PostgreSQL
 
 I applied the following query to check for duplicate VIN numbers and delete repeated ones:
 
-![image 1](https://github.com/umarovj/Car-Search-Project/blob/main/Query%20Results/SQL%20duplicate%20check.png)
+![image 1](https://github.com/umarovj/Car-Search-Project/blob/main/Images/SQL%20duplicate%20check.png)
 
 Then I created a query to look at the price difference and price difference by percentage between said dates:
 
-![image 2](https://github.com/umarovj/Car-Search-Project/blob/main/Query%20Results/SQL%20price%20diff%20as%20percentage.png)
+![image 2](https://github.com/umarovj/Car-Search-Project/blob/main/Images/SQL%20price%20diff%20as%20percentage.png)
 
 
 
