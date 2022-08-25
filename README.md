@@ -91,7 +91,11 @@ The second graphic underneath shows the most common models of these brands. This
 
 I also wondered about who are the sellers that post the most on Cars.com. This graphic below represent the most common sellers out of five thousand listings with proportion of each car brand sold. 
 
-![image 4]([https://github.com/umarovj/Car-Search-Project/blob/main/Images/Dashboard%201.png](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Which%20Dealers%20Are%20Listing%20The%20Most_.png)
+![image 4](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Which%20Dealers%20Are%20Listing%20The%20Most_.png)
+
+Apperently Buerkly Hyundai listed the most with 50 listings. What is interesting is that this seller listed more Hondas than Hyundais.
+
+It was also interesting to view where in my region cars are being sold the most. Therefore I matched the zip codes to the mapping feature in tableau and created this graphic below:
 
 
 
