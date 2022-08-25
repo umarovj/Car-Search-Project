@@ -83,7 +83,15 @@ I collected this data over a course of a month and imported them into Tableau to
 
 Using Tabeau, I gather all the data show general overview and instersting insights. I wanted to know which cars are being sold the most in my area. Out of a sample pool of five thousand listntings near my area here is what I created:
 
+![image 3](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Dashboard%201.png)
 
+The first Graphic shows the most common car brands listed in ascending order. I found that Ford is the most common with 154 listings and Honda is second with 121 listings. 
+
+The second graphic underneath shows the most common models of these brands. This shows that Chevrolet Equinox is the most common car sold with 39 listings and Ford f-150 is the second more common with 37 listings. These graphics do no represent the entire pool and less common brands or models have been conditionally excluded out of view. 
+
+I also wondered about who are the sellers that post the most on Cars.com. This graphic below represent the most common sellers out of five thousand listings with proportion of each car brand sold. 
+
+![image 4]([https://github.com/umarovj/Car-Search-Project/blob/main/Images/Dashboard%201.png](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Which%20Dealers%20Are%20Listing%20The%20Most_.png)
 
 
 
