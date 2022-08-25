@@ -77,6 +77,20 @@ Then I created a query to look at the price difference and price difference by p
 
 ![image 2](https://github.com/umarovj/Car-Search-Project/blob/main/Images/SQL%20price%20diff%20as%20percentage.png)
 
+I collected this data over a course of a month and imported them into Tableau to visualize the results. 
+
+## Data Insights
+
+Using Tabeau, I gather all the data show general overview and instersting insights. I wanted to know which cars are being sold the most in my area. Out of a sample pool of five thousand listntings near my area here is what I created:
+
+
+
+
+
+## Results
+
+
+
 
 
 
