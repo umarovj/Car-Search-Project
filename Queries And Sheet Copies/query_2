@@ -1,12 +1,12 @@
 /* Create a table */
 
-CREATE TABLE car_raw_july_29
+CREATE TABLE car_raw_aug_18
 (
 	Year	int,
 	Make	varchar(255),
 	Model	varchar(255),
 	used_or_new	varchar(255),
-	Price	NUMERIC,
+	Price	int,
 	ConsumerRating	float,
 	ConsumerReviews	int,
 	SellerType	varchar(255),
@@ -37,7 +37,7 @@ CREATE TABLE car_raw_july_29
 
 /* Find and check duplicate VIN # */
 SELECT VIN, Count(*)
-FROM car_raw_aug_15
+FROM car_raw_aug_18
 GROUP BY VIN
 HAVING COUNT(*) > 1;
 
@@ -77,6 +77,20 @@ DELETE FROM car_raw_july_22
 WHERE VIN in (SELECT VIN FROM cte WHERE RN > 1);
 
 
+
+/* Count Price Changes */
+
+SELECT (car_raw_aug_18.price - car_raw_july_22.price) AS Difference, Count(*)
+FROM car_raw_July_22
+LEFT JOIN car_raw_aug_18
+ON car_raw_july_22.vin = car_raw_aug_18.vin
+GROUP BY Difference;
+
+SELECT (car_raw_aug_8.price - car_raw_july_22.price) AS Difference, Count(*)
+FROM car_raw_July_22
+LEFT JOIN car_raw_aug_8
+ON car_raw_july_22.vin = car_raw_aug_8.vin
+GROUP BY Difference;
 
 /* Price differences btween july 22 and 29 */
 
@@ -131,6 +145,8 @@ LEFT JOIN car_raw_aug_8
 ON car_raw_july_22.vin = car_raw_aug_8.vin
 WHERE car_raw_july_22.price BETWEEN 20000 AND 30000
 ORDER BY difference;
+
+
 
 /* ALL DATA WITH differences */
 
