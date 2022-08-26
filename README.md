@@ -97,9 +97,15 @@ Apperently Buerkly Hyundai listed the most with 50 listings. What is interesting
 
 It was also interesting to view where in my region cars are being sold the most. Therefore I matched the zip codes to the mapping feature in tableau and created this graphic below:
 
+![image 5](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Count%20of%20Listings%20In%20Each%20Zip-Code%20(1).png)
 
+It appears that the region where White Bear Lake, MN resides had posted most of the listings. This is also where Luther Subaru is, which is the fifth most listed seller.
 
 ## Results
+
+The overview of the entire data has been interesting to unveal as well as the results of my findings interms of market prices. I have used July 22, 2022 as my staring base prices. 
+
+
 
 
 
