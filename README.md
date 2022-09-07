@@ -109,7 +109,7 @@ The overview of the entire data has been interesting to unveal as well as the re
 
 We can see a trend that that prices are decreasing over a month long period. There was an average price reduction of $1200 from July 22 to August 23 and based on the graph, prices are expected to decrease more. 
 
-Based on these results it isevident that the prices are falling but what is causing this? There are many factors to consider that are driving this trend. They are defined by current industry and local factors. Local factors include dealerships who are trying to cycle thier floor and sell the vehicle rapidly which will cause large discounts. Industry factors are based on supply and demand ecomonic factors. The current consensus is that the supply for used cars is increaseing. As supply catches up with demand, Dealerships start to become more competative with each other causing the prices to slowly decrease. 
+Based on these results it is evident that the prices are falling but what is causing this? There are many factors to consider that are driving this trend. They are defined by current industry and local factors. Local factors include dealerships who are trying to cycle thier floor and sell the vehicle rapidly which will cause large discounts. Industry factors are based on supply and demand ecomonics. The current consensus is that the supply for used cars is increaseing. As supply catches up with demand, Dealerships start to become more competative with each other causing the prices to slowly decrease. 
 
 
 
