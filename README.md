@@ -103,7 +103,13 @@ It appears that the region where White Bear Lake, MN resides had posted most of 
 
 ## Results
 
-The overview of the entire data has been interesting to unveal as well as the results of my findings interms of market prices. I have used July 22, 2022 as my staring base prices. 
+The overview of the entire data has been interesting to unveal as well as the results of my findings in terms of market prices. I have used July 22, 2022 as my staring base prices. The bar graph below represents avarage prices differences of listings that had a price change. 
+
+![image 6](https://github.com/umarovj/Car-Search-Project/blob/main/Images/Average%20Price%20Difference.png)
+
+We can see a trend that that prices are decreasing over a month long period. There was an average price reduction of $1200 from July 22 to August 23 and based on the graph, prices are expected to decrease more. 
+
+Based on these results it isevident that the prices are falling but what is causing this? There are many factors to consider that are driving this trend. They are defined by current industry and local factors. Local factors include dealerships who are trying to cycle thier floor and sell the vehicle rapidly which will cause large discounts. Industry factors are based on supply and demand ecomonic factors. The current consensus is that the supply for used cars is increaseing. As supply catches up with demand, Dealerships start to become more competative with each other causing the prices to slowly decrease. 
 
 
 
